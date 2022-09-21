@@ -1,81 +1,16 @@
-2022-09-14 12:50:31,147 ERROR: Exception on /edit_profile [POST] [in C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py:1741]
-Traceback (most recent call last):
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
-    self.dialect.do_execute(
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 732, in do_execute
-    cursor.execute(statement, parameters)
-sqlite3.IntegrityError: UNIQUE constraint failed: user.username
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask_login\utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "C:\Users\bluin\PycharmProjects\microblog\app\routes.py", line 96, in edit_profile
-    db.session.commit()
-  File "<string>", line 2, in commit
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 1451, in commit
-    self._transaction.commit(_to_root=self.future)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 829, in commit
-    self._prepare_impl()
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 808, in _prepare_impl
-    self.session.flush()
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3383, in flush
-    self._flush(objects)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3523, in _flush
-    transaction.rollback(_capture_exception=True)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\util\langhelpers.py", line 70, in __exit__
-    compat.raise_(
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 208, in raise_
-    raise exception
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\orm\session.py", line 3483, in _flush
-    flush_context.execute()
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 456, in execute
-    rec.execute(self)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\orm\unitofwork.py", line 630, in execute
-    util.preloaded.orm_persistence.save_obj(
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 237, in save_obj
-    _emit_update_statements(
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\orm\persistence.py", line 1001, in _emit_update_statements
-    c = connection._execute_20(
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1705, in _execute_20
-    return meth(self, args_10style, kwargs_10style, execution_options)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\sql\elements.py", line 333, in _execute_on_connection
-    return connection._execute_clauseelement(
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1572, in _execute_clauseelement
-    ret = self._execute_context(
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1943, in _execute_context
-    self._handle_dbapi_exception(
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 2124, in _handle_dbapi_exception
-    util.raise_(
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 208, in raise_
-    raise exception
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\engine\base.py", line 1900, in _execute_context
-    self.dialect.do_execute(
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\engine\default.py", line 732, in do_execute
-    cursor.execute(statement, parameters)
-sqlalchemy.exc.IntegrityError: (sqlite3.IntegrityError) UNIQUE constraint failed: user.username
-[SQL: UPDATE user SET username=?, about_me=? WHERE user.id = ?]
-[parameters: ('anton', 'I am using microblog', 1)]
-(Background on this error at: https://sqlalche.me/e/14/gkpj)
-2022-09-14 13:02:42,566 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-14 15:00:07,480 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-14 15:00:51,079 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-14 15:01:18,817 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-14 15:59:56,454 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-14 16:02:09,288 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-14 16:02:50,564 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-14 16:08:42,948 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-14 20:32:58,199 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-14 20:33:00,358 ERROR: Exception on / [GET] [in C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py:1741]
+2022-09-15 23:26:31,241 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+2022-09-15 23:27:47,496 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+2022-09-15 23:30:16,510 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+2022-09-15 23:36:42,018 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+2022-09-15 23:37:27,644 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+2022-09-15 23:39:03,309 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+2022-09-15 23:39:20,999 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+2022-09-15 23:40:47,271 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+2022-09-15 23:41:46,100 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+2022-09-15 23:41:59,154 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+2022-09-15 23:50:06,253 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+2022-09-15 23:55:17,739 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+2022-09-15 23:55:24,508 ERROR: Exception on / [GET] [in C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py:1741]
 Traceback (most recent call last):
   File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -87,8 +22,8 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
   File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask_login\utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
-  File "C:\Users\bluin\PycharmProjects\microblog\app\routes.py", line 36, in index
-    return render_template("index.html", title="Home", posts=posts)
+  File "C:\Users\bluin\PycharmProjects\microblog\app\routes.py", line 22, in index
+    return render_template("index.html", title="Home Page", form=form, posts=posts)
   File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\templating.py", line 147, in render_template
     return _render(app, template, context)
   File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\templating.py", line 130, in _render
@@ -99,10 +34,66 @@ Traceback (most recent call last):
     raise rewrite_traceback_stack(source=source)
   File "C:\Users\bluin\PycharmProjects\microblog\app\templates\index.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "C:\Users\bluin\PycharmProjects\microblog\app\templates\base.html", line 35, in top-level template code
-    {% block content %}{% endblock %}
-  File "C:\Users\bluin\PycharmProjects\microblog\app\templates\index.html", line 6, in block 'content'
-    {{ form.post.hidden_tag() }}
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\jinja2\environment.py", line 485, in getattr
-    return getattr(obj, attribute)
-jinja2.exceptions.UndefinedError: 'form' is undefined
+  File "C:\Users\bluin\PycharmProjects\microblog\app\templates\base.html", line 20, in top-level template code
+    <a href="{{ url_for('explore') }}"></a>
+  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 2031, in url_for
+    return self.handle_url_build_error(error, endpoint, values)
+  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 2020, in url_for
+    rv = url_adapter.build(  # type: ignore[union-attr]
+  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\werkzeug\routing\map.py", line 917, in build
+    raise BuildError(endpoint, values, method, self)
+werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'explore'. Did you mean 'explorer' instead?
+2022-09-15 23:55:52,023 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+2022-09-16 00:02:02,827 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+2022-09-16 00:02:05,612 ERROR: Exception on /explore [GET] [in C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py:1741]
+Traceback (most recent call last):
+  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "C:\Users\bluin\PycharmProjects\microblog\app\routes.py", line 127, in explore
+    posts = Post.query.order_by(Post.timestamp().desc()).all()
+TypeError: 'InstrumentedAttribute' object is not callable
+2022-09-16 00:02:53,835 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+2022-09-16 00:02:57,398 ERROR: Exception on /explore [GET] [in C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py:1741]
+Traceback (most recent call last):
+  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "C:\Users\bluin\PycharmProjects\microblog\app\routes.py", line 128, in explore
+    return render_template("index", title="Explore", posts=posts)
+  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\templating.py", line 146, in render_template
+    template = app.jinja_env.get_or_select_template(template_name_or_list)
+  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
+    return self.get_template(template_name_or_list, parent, globals)
+  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\jinja2\environment.py", line 1010, in get_template
+    return self._load_template(name, globals)
+  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\jinja2\environment.py", line 969, in _load_template
+    template = self.loader.load(self, name, self.make_globals(globals))
+  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\jinja2\loaders.py", line 126, in load
+    source, filename, uptodate = self.get_source(environment, name)
+  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\templating.py", line 62, in get_source
+    return self._get_source_fast(environment, template)
+  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\templating.py", line 98, in _get_source_fast
+    raise TemplateNotFound(template)
+jinja2.exceptions.TemplateNotFound: index
+2022-09-16 00:04:29,028 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+2022-09-16 00:05:09,227 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+2022-09-16 00:07:41,417 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+2022-09-16 00:09:49,595 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+2022-09-16 00:10:00,312 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+2022-09-16 00:10:14,726 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+2022-09-16 00:16:54,139 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]

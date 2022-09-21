@@ -1,99 +1,123 @@
-2022-09-15 23:26:31,241 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-15 23:27:47,496 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-15 23:30:16,510 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-15 23:36:42,018 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-15 23:37:27,644 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-15 23:39:03,309 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-15 23:39:20,999 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-15 23:40:47,271 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-15 23:41:46,100 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-15 23:41:59,154 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-15 23:50:06,253 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-15 23:55:17,739 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-15 23:55:24,508 ERROR: Exception on / [GET] [in C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py:1741]
+2022-09-17 22:58:33,559 ERROR: Exception on /edit_profile [GET] [in /home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1822, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1820, in full_dispatch_request
     rv = self.dispatch_request()
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1796, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
-  File "C:\Users\bluin\PycharmProjects\microblog\app\routes.py", line 22, in index
-    return render_template("index.html", title="Home Page", form=form, posts=posts)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\templating.py", line 147, in render_template
+  File "/home/zozo/PycharmProjects/microblog/app/routes.py", line 78, in edit_profile
+    if form.validate_on_submit():
+NameError: name 'form' is not defined
+2022-09-17 22:59:21,227 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:45]
+2022-09-17 22:59:25,440 ERROR: Exception on /edit_profile [GET] [in /home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/zozo/PycharmProjects/microblog/app/routes.py", line 78, in edit_profile
+    if form.validate_on_submit():
+NameError: name 'form' is not defined
+2022-09-18 00:04:18,355 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:45]
+2022-09-18 00:11:17,983 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:44]
+2022-09-18 00:11:33,348 ERROR: Exception on / [GET] [in /home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/zozo/PycharmProjects/microblog/app/routes.py", line 23, in index
+    page, app.config['POST_PER_PAGE', False])
+KeyError: ('POST_PER_PAGE', False)
+2022-09-18 00:11:38,625 ERROR: Exception on /index [GET] [in /home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/zozo/PycharmProjects/microblog/app/routes.py", line 23, in index
+    page, app.config['POST_PER_PAGE', False])
+KeyError: ('POST_PER_PAGE', False)
+2022-09-18 00:12:25,267 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:44]
+2022-09-18 00:12:52,426 ERROR: Exception on /explore [GET] [in /home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/zozo/PycharmProjects/microblog/app/routes.py", line 129, in explore
+    return render_template("index.html", title="Explore", posts=posts)
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
     return _render(app, template, context)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\templating.py", line 130, in _render
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/templating.py", line 130, in _render
     rv = template.render(context)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\jinja2\environment.py", line 1301, in render
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
     self.environment.handle_exception()
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\jinja2\environment.py", line 936, in handle_exception
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
     raise rewrite_traceback_stack(source=source)
-  File "C:\Users\bluin\PycharmProjects\microblog\app\templates\index.html", line 1, in top-level template code
+  File "/home/zozo/PycharmProjects/microblog/app/templates/index.html", line 1, in top-level template code
     {% extends "base.html" %}
-  File "C:\Users\bluin\PycharmProjects\microblog\app\templates\base.html", line 20, in top-level template code
-    <a href="{{ url_for('explore') }}"></a>
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 2031, in url_for
-    return self.handle_url_build_error(error, endpoint, values)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 2020, in url_for
-    rv = url_adapter.build(  # type: ignore[union-attr]
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\werkzeug\routing\map.py", line 917, in build
-    raise BuildError(endpoint, values, method, self)
-werkzeug.routing.exceptions.BuildError: Could not build url for endpoint 'explore'. Did you mean 'explorer' instead?
-2022-09-15 23:55:52,023 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-16 00:02:02,827 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-16 00:02:05,612 ERROR: Exception on /explore [GET] [in C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py:1741]
+  File "/home/zozo/PycharmProjects/microblog/app/templates/base.html", line 33, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/zozo/PycharmProjects/microblog/app/templates/index.html", line 18, in block 'content'
+    {% for post in posts %}
+TypeError: 'Pagination' object is not iterable
+2022-09-18 00:15:16,882 ERROR: Exception on /explore [GET] [in /home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1822, in full_dispatch_request
     rv = self.handle_user_exception(e)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1820, in full_dispatch_request
     rv = self.dispatch_request()
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1796, in dispatch_request
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask_login\utils.py", line 290, in decorated_view
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
-  File "C:\Users\bluin\PycharmProjects\microblog\app\routes.py", line 127, in explore
-    posts = Post.query.order_by(Post.timestamp().desc()).all()
-TypeError: 'InstrumentedAttribute' object is not callable
-2022-09-16 00:02:53,835 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-16 00:02:57,398 ERROR: Exception on /explore [GET] [in C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py:1741]
-Traceback (most recent call last):
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask_login\utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "C:\Users\bluin\PycharmProjects\microblog\app\routes.py", line 128, in explore
-    return render_template("index", title="Explore", posts=posts)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\templating.py", line 146, in render_template
-    template = app.jinja_env.get_or_select_template(template_name_or_list)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\jinja2\environment.py", line 1081, in get_or_select_template
-    return self.get_template(template_name_or_list, parent, globals)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\jinja2\environment.py", line 1010, in get_template
-    return self._load_template(name, globals)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\jinja2\environment.py", line 969, in _load_template
-    template = self.loader.load(self, name, self.make_globals(globals))
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\jinja2\loaders.py", line 126, in load
-    source, filename, uptodate = self.get_source(environment, name)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\templating.py", line 62, in get_source
-    return self._get_source_fast(environment, template)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\templating.py", line 98, in _get_source_fast
-    raise TemplateNotFound(template)
-jinja2.exceptions.TemplateNotFound: index
-2022-09-16 00:04:29,028 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-16 00:05:09,227 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-16 00:07:41,417 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-16 00:09:49,595 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-16 00:10:00,312 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-16 00:10:14,726 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-16 00:16:54,139 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
+  File "/home/zozo/PycharmProjects/microblog/app/routes.py", line 129, in explore
+    return render_template("index.html", title="Explore", posts=posts)
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/zozo/PycharmProjects/microblog/app/templates/index.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/zozo/PycharmProjects/microblog/app/templates/base.html", line 33, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/zozo/PycharmProjects/microblog/app/templates/index.html", line 18, in block 'content'
+    {% for post in posts %}
+TypeError: 'Pagination' object is not iterable
+2022-09-18 00:16:23,281 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:44]

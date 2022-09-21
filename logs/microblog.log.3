@@ -1,83 +1,5 @@
-2022-09-16 00:17:15,561 ERROR: Exception on /user/asia1 [GET] [in C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py:1741]
-Traceback (most recent call last):
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 327, in __getattr__
-    return getattr(self.comparator, key)
-AttributeError: 'Comparator' object has no attribute 'username'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask_login\utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "C:\Users\bluin\PycharmProjects\microblog\app\routes.py", line 68, in user
-    posts = Post.query.filter_by(username=Post.author.username)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\orm\attributes.py", line 329, in __getattr__
-    util.raise_(
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 208, in raise_
-    raise exception
-AttributeError: Neither 'InstrumentedAttribute' object nor 'Comparator' object associated with Post.author has an attribute 'username'
-2022-09-16 00:18:30,852 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-16 00:18:34,664 ERROR: Exception on /user/asia1 [GET] [in C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py:1741]
-Traceback (most recent call last):
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\sql\base.py", line 1694, in _entity_namespace_key
-    return getattr(ns, key)
-AttributeError: type object 'Post' has no attribute 'username'
-
-The above exception was the direct cause of the following exception:
-
-Traceback (most recent call last):
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask_login\utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "C:\Users\bluin\PycharmProjects\microblog\app\routes.py", line 68, in user
-    posts = Post.query.filter_by(username=user.username)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1806, in filter_by
-    clauses = [
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\orm\query.py", line 1807, in <listcomp>
-    _entity_namespace_key(from_entity, key) == value
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\sql\base.py", line 1696, in _entity_namespace_key
-    util.raise_(
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\sqlalchemy\util\compat.py", line 208, in raise_
-    raise exception
-sqlalchemy.exc.InvalidRequestError: Entity namespace for "post" has no property "username"
-2022-09-16 00:29:42,210 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-16 00:29:46,597 ERROR: Exception on /user/asia1 [GET] [in C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py:1741]
-Traceback (most recent call last):
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 2525, in wsgi_app
-    response = self.full_dispatch_request()
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1822, in full_dispatch_request
-    rv = self.handle_user_exception(e)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1820, in full_dispatch_request
-    rv = self.dispatch_request()
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask\app.py", line 1796, in dispatch_request
-    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
-  File "C:\Users\bluin\PycharmProjects\microblog\venv\lib\site-packages\flask_login\utils.py", line 290, in decorated_view
-    return current_app.ensure_sync(func)(*args, **kwargs)
-  File "C:\Users\bluin\PycharmProjects\microblog\app\routes.py", line 70, in user
-    posts = Post.query.join(User, (User.id == Post.user_id)).filter_by(User.username == current_user.username)
-TypeError: filter_by() takes 1 positional argument but 2 were given
-2022-09-16 00:30:11,685 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-16 00:30:55,747 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-16 00:31:32,893 INFO: Microblog startup [in C:\Users\bluin\PycharmProjects\microblog\app\__init__.py:44]
-2022-09-17 22:33:00,795 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:44]
-2022-09-17 22:38:22,076 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:44]
-2022-09-17 22:42:57,825 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:44]
-2022-09-17 22:43:17,009 ERROR: Exception on /edit_profile [GET] [in /home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py:1741]
+2022-09-19 00:38:04,494 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:44]
+2022-09-19 00:38:29,077 ERROR: Exception on /user/susan [GET] [in /home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -89,11 +11,36 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
   File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/home/zozo/PycharmProjects/microblog/app/routes.py", line 78, in edit_profile
-    if form.validate_on_submit():
-NameError: name 'form' is not defined
-2022-09-17 22:54:51,559 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:44]
-2022-09-17 22:55:04,344 ERROR: Exception on /edit_profile [GET] [in /home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py:1741]
+  File "/home/zozo/PycharmProjects/microblog/app/routes.py", line 80, in user
+    return render_template("user.html", user=user, posts=posts,
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/templating.py", line 147, in render_template
+    return _render(app, template, context)
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/templating.py", line 130, in _render
+    rv = template.render(context)
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/jinja2/environment.py", line 1301, in render
+    self.environment.handle_exception()
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/jinja2/environment.py", line 936, in handle_exception
+    raise rewrite_traceback_stack(source=source)
+  File "/home/zozo/PycharmProjects/microblog/app/templates/user.html", line 1, in top-level template code
+    {% extends "base.html" %}
+  File "/home/zozo/PycharmProjects/microblog/app/templates/base.html", line 33, in top-level template code
+    {% block content %}{% endblock %}
+  File "/home/zozo/PycharmProjects/microblog/app/templates/user.html", line 22, in block 'content'
+    {% for post in posts %}
+TypeError: 'Pagination' object is not iterable
+2022-09-19 00:40:08,362 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:44]
+2022-09-19 00:41:44,444 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:44]
+2022-09-19 15:37:57,749 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:44]
+2022-09-19 20:37:15,112 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:46]
+2022-09-19 20:39:47,362 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:46]
+2022-09-19 20:49:12,965 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:46]
+2022-09-19 20:54:25,746 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:46]
+2022-09-19 20:54:51,640 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:46]
+2022-09-19 20:55:17,629 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:46]
+2022-09-19 20:55:51,264 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:46]
+2022-09-19 20:58:44,692 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:46]
+2022-09-19 20:59:16,168 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:46]
+2022-09-19 20:59:28,271 ERROR: Exception on /user/susan [GET] [in /home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py:1741]
 Traceback (most recent call last):
   File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
     response = self.full_dispatch_request()
@@ -105,9 +52,65 @@ Traceback (most recent call last):
     return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
   File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask_login/utils.py", line 290, in decorated_view
     return current_app.ensure_sync(func)(*args, **kwargs)
-  File "/home/zozo/PycharmProjects/microblog/app/routes.py", line 78, in edit_profile
-    if form.validate_on_submit():
-NameError: name 'form' is not defined
-2022-09-17 22:57:06,715 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:45]
-2022-09-17 22:57:57,685 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:45]
-2022-09-17 22:58:13,469 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:45]
+  File "/home/zozo/PycharmProjects/microblog/app/routes.py", line 74, in user
+    posts = user.posts.order_by(Post.timestamp.desc()).paginate(
+AttributeError: 'function' object has no attribute 'posts'
+2022-09-19 21:00:38,557 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:46]
+2022-09-19 21:10:12,875 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:46]
+2022-09-19 21:21:53,408 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:47]
+2022-09-19 21:50:32,362 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:46]
+2022-09-19 21:51:14,470 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:46]
+2022-09-19 21:51:25,423 ERROR: Exception on /user/susan [GET] [in /home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask_login/utils.py", line 290, in decorated_view
+    return current_app.ensure_sync(func)(*args, **kwargs)
+  File "/home/zozo/PycharmProjects/microblog/app/routes.py", line 74, in user
+    posts = user.posts.order_by(Post.timestamp.desc()).paginate(
+AttributeError: 'function' object has no attribute 'posts'
+2022-09-20 09:54:44,153 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:46]
+2022-09-20 11:13:18,176 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:46]
+2022-09-20 11:17:04,314 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:46]
+2022-09-20 11:17:18,252 ERROR: Exception on /reset_password_request [POST] [in /home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/zozo/PycharmProjects/microblog/app/routes.py", line 154, in reset_password_request
+    send_password_reset_email(user)
+  File "/home/zozo/PycharmProjects/microblog/app/email.py", line 14, in send_password_reset_email
+    token = user.get_reset_password_token()
+  File "/home/zozo/PycharmProjects/microblog/app/models.py", line 61, in get_reset_password_token
+    return jwt.encode(
+AttributeError: module 'jwt' has no attribute 'encode'
+2022-09-20 11:28:08,030 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:46]
+2022-09-20 11:28:21,731 ERROR: Exception on /reset_password_request [POST] [in /home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py:1741]
+Traceback (most recent call last):
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 2525, in wsgi_app
+    response = self.full_dispatch_request()
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1822, in full_dispatch_request
+    rv = self.handle_user_exception(e)
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1820, in full_dispatch_request
+    rv = self.dispatch_request()
+  File "/home/zozo/PycharmProjects/microblog/venv/lib/python3.8/site-packages/flask/app.py", line 1796, in dispatch_request
+    return self.ensure_sync(self.view_functions[rule.endpoint])(**view_args)
+  File "/home/zozo/PycharmProjects/microblog/app/routes.py", line 154, in reset_password_request
+    send_password_reset_email(user)
+  File "/home/zozo/PycharmProjects/microblog/app/email.py", line 14, in send_password_reset_email
+    token = user.get_reset_password_token()
+  File "/home/zozo/PycharmProjects/microblog/app/models.py", line 61, in get_reset_password_token
+    return jwt.encode(
+AttributeError: 'str' object has no attribute 'decode'
+2022-09-20 11:30:59,953 INFO: Microblog startup [in /home/zozo/PycharmProjects/microblog/app/__init__.py:46]
